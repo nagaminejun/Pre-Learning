@@ -1,0 +1,14 @@
+<h1>ログインアプリです！</h1>
+
+<% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+  <h2> 現在 <%= current_user.name %> さんがログインしています </h2> <!-- ここを追加します -->
+  <h4> メールアドレス： <%= current_user.email %> </h4>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %> <!-- ログアウトをする -->
+  <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-primary" %>
+<% else %>
+  <!-- ユーザーがログインしていなかった時の処理 -->
+  <h2> 現在ログインしていません </h2>
+  <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %> <!-- ログイン画面に移行する -->
+  <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %> <!-- 新規登録画面に移行する -->
+<% end %>
