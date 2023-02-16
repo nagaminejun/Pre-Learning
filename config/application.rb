@@ -10,6 +10,7 @@ module PreLearning
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo' # この１行をここに追加します。
 
     # Configuration for the application, engines, and railties goes here.

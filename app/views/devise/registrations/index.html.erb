@@ -1,4 +1,4 @@
-<h1>ログインアプリです！</h1>
+<h1>ログインアプリです!!!!</h1>
 
 <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
   <!-- ユーザーがログインしていた時の処理 -->
@@ -9,6 +9,8 @@
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> 現在ログインしていません </h2>
-  <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %> <!-- ログイン画面に移行する -->
-  <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %> <!-- 新規登録画面に移行する -->
+  <!--%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %--> <!-- ログイン画面に移行する -->
+  <!--%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %--> <!-- 新規登録画面に移行する -->
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary"  %><br />
+  <%= render "devise/shared/links" %>
 <% end %>
