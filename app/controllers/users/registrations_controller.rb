@@ -10,6 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def dash_boards
+  end
+
   # POST /resource
   def create
     super
@@ -19,8 +22,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #end
   end
 
-  def index
-  end
+  #def index
+  #end
 
   # GET /resource/edit
   # def edit

@@ -1,4 +1,4 @@
 class CommentsController < ApplicationController
-  def index
+  def dash_boards
   end
 end

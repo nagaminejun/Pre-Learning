@@ -85,7 +85,7 @@ Rails.application.configure do
     port:                 587,
     address:              'smtp.gmail.com',
     domain:               'gmail.com',
-    user_name:            'nagaminejun1988@gmail.com', #'送信元となるGmailアドレスを記入', #notifications@example.com
+    user_name:            'sample@gmail.com', #'送信元となるGmailアドレスを記入', #notifications@example.com
     password:             'yotideyisolqlqej',
     authentication:       'login',
     enable_starttls_auto: true
