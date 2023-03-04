@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  scope :users do
+    resources :articles
+  end
+
   devise_for :users, controllers: {
-    registrations: "users/registrations"#"devise/registrations" #ここに"users/registrations"を入れるとルーティングエラーなる、、
+    registrations: "users/registrations",#"devise/registrations" #ここに"users/registrations"を入れるとルーティングエラーなる、、
   }
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
     #root 'users/registrations#index'
     root 'devise/registrations#dash_boards'
     get 'users/dash_boards', to: 'devise/registrations#dash_boards'
+    #resources :articles
   end
 end
 

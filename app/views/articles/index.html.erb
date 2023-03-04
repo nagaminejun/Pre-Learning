@@ -1,0 +1,30 @@
+
+<div class="col-md-10 col-md-offset-1">
+<h1>記事の一覧</h1>
+<%= link_to "記事の新規作成", new_article_path, class: "btn btn-primary"%>
+  <table class="table table-hover", id="table-articles" >
+    <thead>
+      <tr>
+        <th>詳細表示</th>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+        <th>編集・削除</th>
+      </tr>
+    </thead>
+
+    <% @articles.each do |article| %>
+      <tr>
+        <th><%= link_to "詳細", article_path(article.id), class: "btn btn-primary"%></th>
+        <th><%= article.title %></th>
+        <th><%= article.content %></th>
+        <th><%= article.image %></th>
+        <th>
+          <%= link_to "編集", edit_article_path(article.id), class: "btn btn-success"%>
+          <%= link_to "削除", "#", method: :delete,
+          data: { confirm: "「#{article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%>
+        </th>
+      </tr>
+    <% end %>
+  </table>
+</div>
