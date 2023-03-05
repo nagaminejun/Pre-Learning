@@ -1,5 +1,5 @@
-
 <div class="col-md-10 col-md-offset-1">
+<%= flash[:success] %><br>
 <h1>記事の一覧</h1>
 <%= link_to "記事の新規作成", new_article_path, class: "btn btn-primary"%>
   <table class="table table-hover", id="table-articles" >
@@ -20,8 +20,8 @@
         <th><%= article.content %></th>
         <th><%= article.image %></th>
         <th>
-          <%= link_to "編集", edit_article_path(article.id), class: "btn btn-success"%>
-          <%= link_to "削除", "#", method: :delete,
+          <%= link_to "編集", edit_article_path(article), class: "btn btn-success"%>
+          <%= link_to "削除", article_path(article), method: :delete,
           data: { confirm: "「#{article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%>
         </th>
       </tr>
