@@ -15,14 +15,15 @@
       <tr>
         <th><%= @article.title %></th>
         <th><%= @article.content %></th>
-        <th><%= @article.image %></th>
-        <th>
-          <%= link_to "編集", edit_article_path(@article.id), class: "btn btn-success"%>
-          <%= link_to "削除", "#", method: :delete,
-          data: { confirm: "「#{@article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%>
-        </th>
+        <th><%= image_tag @article.image.url if @article.image.present? %></th>
+          
       </tr>
+      
     </table>
+    
   </div>
 </div>
-<%= link_to "記事一覧", articles_path, class: "btn btn-info"%>
+<%= link_to t('.edit'), edit_article_path(@article), class: "btn btn-success"%>
+<%= link_to t('.delete'), article_path(@article), method: :delete,
+    data: { confirm: "「#{@article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%><br>
+<%= link_to t('.index'), articles_path, class: "btn btn-info"%>

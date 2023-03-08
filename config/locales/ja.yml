@@ -1,4 +1,26 @@
 ja:
+  articles:
+    new: 
+      cancel: キャンセル
+      index: 記事一覧
+    show:
+      new: 新規作成
+      edit: 編集
+      delete: 削除
+      cancel: キャンセル
+      index: 記事一覧へ戻る
+    edit:
+      show: 詳細
+      new: 新規作成
+      delete: 削除
+      cancel: キャンセル
+      index: 一覧
+    index:
+      show: 詳細
+      new: 記事新規作成
+      edit: 編集
+      delete: 削除
+      cancel: キャンセル
   activerecord:
     errors:
       messages:
@@ -146,7 +168,8 @@ ja:
       submit: 保存する
       update: 更新する
     link_to:
-      edot: 編集
+      show: 詳細
+      edit: 編集
       sign_up: 
   number:
     currency:

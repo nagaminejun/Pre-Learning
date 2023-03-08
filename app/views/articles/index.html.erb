@@ -1,7 +1,7 @@
 <div class="col-md-10 col-md-offset-1">
 <%= flash[:success] %><br>
 <h1>記事の一覧</h1>
-<%= link_to "記事の新規作成", new_article_path, class: "btn btn-primary"%>
+<%= link_to t('.new'), new_article_path, class: "btn btn-primary"%>
   <table class="table table-hover", id="table-articles" >
     <thead>
       <tr>
@@ -15,13 +15,13 @@
 
     <% @articles.each do |article| %>
       <tr>
-        <th><%= link_to "詳細", article_path(article.id), class: "btn btn-primary"%></th>
+        <th><%= link_to t('.show'), article_path(article.id), class: "btn btn-primary"%></th>
         <th><%= article.title %></th>
         <th><%= article.content %></th>
-        <th><%= article.image %></th>
+        <th><%= image_tag article.image.url if article.image.present? %></th>
         <th>
-          <%= link_to "編集", edit_article_path(article), class: "btn btn-success"%>
-          <%= link_to "削除", article_path(article), method: :delete,
+          <%= link_to t('.edit'), edit_article_path(article), class: "btn btn-success"%>
+          <%= link_to t('.delete'), article_path(article), method: :delete,
           data: { confirm: "「#{article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%>
         </th>
       </tr>

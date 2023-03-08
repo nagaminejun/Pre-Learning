@@ -9,8 +9,12 @@
       <%= f.text_field :title, class: "form-control" %>
       <%= f.label :content, class: "label-form" %>
       <%= f.text_area :content, rows: 5, class: "form-control" %>
-      <%= f.submit "新規登録", class: "btn btn-primary btn-form" %>
+      <%= f.label :image, class: "label-form" %><br>
+      <%= f.file_field :image, class: "image" %><br>
+
+      <%= f.submit class: "btn btn-primary btn-form" %>
     <% end %>
   </div>
 </div>
-<%= link_to "記事一覧", articles_path, class: "btn btn-info"%>
+<%= link_to t('.index'), articles_path, class: "btn btn-info"%><br>
+<%= link_to t('devise.shared.links.back'), :back %>
