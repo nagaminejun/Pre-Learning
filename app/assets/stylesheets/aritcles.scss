@@ -1,0 +1,26 @@
+// Place all the styles related to the Aritcles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+#table-articles {
+  th {
+    vertical-align: middle;
+  }
+  td {
+    vertical-align: middle;
+  }
+}
+
+#table-aritcle {
+  table-layout: fixed; width: 100%;
+  th {
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+  }
+  td {
+    word-wrap: break-word;
+  }
+}
+

@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-6 mx-auto">
+  <%= flash[:success] %><br>
+  <h1>記事詳細</h1>
+    <table class="table table-hover center", id="table-articles">
+      <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+      </tr>
+    </thead>
+      <tr>
+        <th><%= @article.title %></th>
+        <th><%= @article.content %></th>
+        <th><%= image_tag @article.image.url if @article.image.present? %></th>
+      </tr>
+    </table>
+    <div class="center">
+      <%= link_to t('.edit'), edit_article_path(@article), class: "btn btn-success"%>
+      <%= link_to t('.delete'), article_path(@article), method: :delete,
+          data: { confirm: "「#{@article.title}」を削除します。よろしいですか？" }, class: "btn btn-danger"%><br>
+      <%= link_to t('.index'), articles_path, class: "btn btn-info"%>
+    </div>
+  </div>
+</div>
+
